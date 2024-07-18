@@ -7,14 +7,14 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #f5f5f5;
+        background-color: #FFF8F3;
     }
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#2e7bcf,#2e7bcf);
+    .css-1d391kg .css-1d391kg .css-1d391kg {
+        background-color: #405D72;
         color: white;
     }
     .stButton>button {
-        background-color: #2e7bcf;
+        background-color: #405D72;
         color: white;
     }
     .stTextInput>div>div>input {
@@ -36,17 +36,18 @@ def model_prediction(test_image):
 
 # Sidebar
 st.sidebar.title("Dashboard")
-app_mode = st.sidebar.selectbox("Select Page", ["Home", "About Project", "Prediction"])
+app_mode = st.sidebar.selectbox("Select Page", ["Home", "Prediction", "About Project"])
 
 # Main Page
 if app_mode == "Home":
     st.header("Fruits & Vegetables Recognition System")
     image_path = "header3.jpg"
     st.image(image_path, use_column_width=True)
-
+    
 # About Project
 elif app_mode == "About Project":
     st.header("About Project")
+    st.image("header2.jpg", use_column_width=True)
     st.subheader("About Dataset")
     st.text("This dataset contains images of the following food items:")
     st.code("""
@@ -77,4 +78,4 @@ elif app_mode == "Prediction":
             label = [i.strip() for i in content]
             st.success(f"Model is Predicting it's a {label[result_index]}")
 
-# Note: You may need to adjust the paths to your images and model as necessary.
+
